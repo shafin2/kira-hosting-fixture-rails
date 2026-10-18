@@ -1,0 +1,6 @@
+Rails.application.routes.draw do
+  get "up" => "rails/health#show", as: :rails_health_check
+  root "notes#index"
+  resources :notes, only: [:create]
+  get "stats" => "notes#stats"
+end

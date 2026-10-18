@@ -1,0 +1,6 @@
+<h1>Kira Rails fixture</h1>
+<p><%= Note.count %> notes</p>
+<%= form_with url: notes_path do |f| %>
+  <%= f.text_field :body %> <%= f.submit "Add" %>
+<% end %>
+<ul><% @notes.each do |n| %><li><%= n.body %></li><% end %></ul>
